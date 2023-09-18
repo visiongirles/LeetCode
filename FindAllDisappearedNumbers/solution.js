@@ -2,6 +2,9 @@
  * @param {number[]} nums
  * @return {number[]}
  */
+
+var assert = require('assert');
+
 var findDisappearedNumbers = function (nums) {
   let n = nums.length;
   let result = new Map();
@@ -15,12 +18,12 @@ var findDisappearedNumbers = function (nums) {
       result.delete(nums[index]);
     }
   }
-  console.log(result);
 
   let array = [];
   result.forEach((key) => array.push(key));
-  console.log(array);
+  return array;
 };
 
 let nums = [4, 3, 2, 7, 8, 2, 3, 1];
-findDisappearedNumbers(nums);
+let result = findDisappearedNumbers(nums);
+assert.deepEqual(result, [5, 6], 'Test 1 failed');

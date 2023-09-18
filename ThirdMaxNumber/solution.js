@@ -16,7 +16,7 @@ var thirdMax = function (nums) {
       if (nums[index] > maxNumberOne) maxNumberOne = nums[index];
     }
 
-    let maxNumberTwo = -Math.pow(2, 32) - 1;
+    let maxNumberTwo = -Math.pow(2, 31) - 1;
 
     for (let index = 0; index < nums.length; index++) {
       if (nums[index] === maxNumberOne) continue;
@@ -24,7 +24,7 @@ var thirdMax = function (nums) {
       if (maxNumberTwo + 1 === maxNumberOne) break;
     }
 
-    let maxNumberThree = -Math.pow(2, 32) - 1;
+    let maxNumberThree = -Math.pow(2, 31) - 1;
 
     for (let index = 0; index < nums.length; index++) {
       if (nums[index] === maxNumberOne) continue;
@@ -33,8 +33,8 @@ var thirdMax = function (nums) {
       if (nums[index] > maxNumberThree) maxNumberThree = nums[index];
       if (maxNumberThree + 1 === maxNumberTwo) break;
     }
-    if (maxNumberTwo === -Math.pow(2, 32) - 1) return maxNumberOne;
-    if (maxNumberThree === -Math.pow(2, 32) - 1) return maxNumberOne;
+    if (maxNumberTwo === -Math.pow(2, 31) - 1) return maxNumberOne;
+    if (maxNumberThree === -Math.pow(2, 31) - 1) return maxNumberOne;
 
     return maxNumberThree;
   }
